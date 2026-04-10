@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xchange | Skill Barter Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 font-sans">
+
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-black text-indigo-600 tracking-tighter">XCHANGE.</h1>
+            <div class="space-x-6 text-sm font-medium text-slate-600 flex items-center">
+                <a href="index.html" class="hover:text-indigo-600 transition">Dashboard</a>
+                <button onclick="toggleModal()" class="bg-indigo-600 text-white px-5 py-2.5 rounded-full hover:bg-indigo-700 transition shadow-md shadow-indigo-200">
+                    + Post Skill
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <div class="mb-10 bg-emerald-50 border border-emerald-100 p-4 rounded-2xl flex items-center justify-center space-x-3">
+            <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <p class="text-emerald-800 text-sm font-semibold italic">DFS Cycle Detection Engine: Online & Monitoring Loops</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div class="lg:col-span-2">
+                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-1.5 h-6 bg-indigo-600 rounded-full mr-3"></span>
+                    Community Network <span class="ml-2 text-xs font-normal text-slate-400">(MySQL)</span>
+                </h3>
+                <div id="user-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    </div>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-1.5 h-6 bg-amber-500 rounded-full mr-3"></span>
+                    System Insights <span class="ml-2 text-xs font-normal text-slate-400">(MongoDB)</span>
+                </h3>
+                <div id="skill-stats" class="space-y-4 bg-indigo-950 p-6 rounded-[2rem] shadow-xl">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+   <div id="postModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+    <div class="bg-white p-8 rounded-[2rem] max-w-sm w-full shadow-2xl">
+        <h3 class="text-2xl font-bold text-slate-800 mb-2">Join Xchange</h3>
+        <input id="newUserName" type="text" placeholder="Full Name" class="w-full border p-3 mb-2 rounded-xl outline-none">
+        <input id="newUserEmail" type="email" placeholder="Email" class="w-full border p-3 mb-4 rounded-xl outline-none">
+        
+        <div class="grid grid-cols-2 gap-2 mb-6">
+            <input id="offerSkill" type="text" placeholder="I Offer (e.g. C++)" class="border p-2 rounded-lg text-xs">
+            <input id="wantSkill" type="text" placeholder="I Want (e.g. JS)" class="border p-2 rounded-lg text-xs">
+        </div>
+        
+        <div class="flex flex-col space-y-3">
+            <button onclick="saveUserAndSkills()" class="bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition">Save to DBs</button>
+            <button onclick="toggleModal()" class="text-slate-400 text-sm font-medium hover:text-slate-600">Cancel</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
